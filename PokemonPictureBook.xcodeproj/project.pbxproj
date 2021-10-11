@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ED1BBB8B2F05EBDB4C6574A /* Pods_PokemonPictureBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E583FE7B6C005C9C7F8C4056 /* Pods_PokemonPictureBook.framework */; };
 		D3C732682713D84A001AB779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C732672713D84A001AB779 /* AppDelegate.swift */; };
 		D3C7326A2713D84A001AB779 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C732692713D84A001AB779 /* SceneDelegate.swift */; };
 		D3C7326C2713D84A001AB779 /* PokemonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7326B2713D84A001AB779 /* PokemonViewController.swift */; };
@@ -19,9 +20,13 @@
 		D3C7328B2713E710001AB779 /* PokemonDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328A2713E710001AB779 /* PokemonDetailController.swift */; };
 		D3C7328D2713E794001AB779 /* FavoritePokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328C2713E794001AB779 /* FavoritePokemonController.swift */; };
 		D3C7328F2713E993001AB779 /* FavoritePokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328E2713E993001AB779 /* FavoritePokemonCell.swift */; };
+		D3C73292271407BB001AB779 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D3C73291271407BB001AB779 /* Alamofire */; };
+		D3C7329527140866001AB779 /* UserDefaultsRepositry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329427140866001AB779 /* UserDefaultsRepositry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		341E518C81C77931E01B5054 /* Pods-PokemonPictureBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonPictureBook.debug.xcconfig"; path = "Target Support Files/Pods-PokemonPictureBook/Pods-PokemonPictureBook.debug.xcconfig"; sourceTree = "<group>"; };
+		8549F992396E112730A9D291 /* Pods-PokemonPictureBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonPictureBook.release.xcconfig"; path = "Target Support Files/Pods-PokemonPictureBook/Pods-PokemonPictureBook.release.xcconfig"; sourceTree = "<group>"; };
 		D3C732642713D84A001AB779 /* PokemonPictureBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonPictureBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C732672713D84A001AB779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3C732692713D84A001AB779 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +41,8 @@
 		D3C7328A2713E710001AB779 /* PokemonDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailController.swift; sourceTree = "<group>"; };
 		D3C7328C2713E794001AB779 /* FavoritePokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonController.swift; sourceTree = "<group>"; };
 		D3C7328E2713E993001AB779 /* FavoritePokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonCell.swift; sourceTree = "<group>"; };
+		D3C7329427140866001AB779 /* UserDefaultsRepositry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepositry.swift; sourceTree = "<group>"; };
+		E583FE7B6C005C9C7F8C4056 /* Pods_PokemonPictureBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonPictureBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +50,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C73292271407BB001AB779 /* Alamofire in Frameworks */,
+				1ED1BBB8B2F05EBDB4C6574A /* Pods_PokemonPictureBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C8D39D46BE624FFCA136701 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E583FE7B6C005C9C7F8C4056 /* Pods_PokemonPictureBook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFED2C3CAA198B5D1060FE7E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				341E518C81C77931E01B5054 /* Pods-PokemonPictureBook.debug.xcconfig */,
+				8549F992396E112730A9D291 /* Pods-PokemonPictureBook.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D3C7325B2713D84A001AB779 = {
 			isa = PBXGroup;
 			children = (
 				D3C732662713D84A001AB779 /* PokemonPictureBook */,
 				D3C732652713D84A001AB779 /* Products */,
+				CFED2C3CAA198B5D1060FE7E /* Pods */,
+				5C8D39D46BE624FFCA136701 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +96,7 @@
 		D3C732662713D84A001AB779 /* PokemonPictureBook */ = {
 			isa = PBXGroup;
 			children = (
+				D3C732932714084C001AB779 /* Repositry */,
 				D3C732892713E6FA001AB779 /* Controllers */,
 				D3C732802713D901001AB779 /* Utility */,
 				D3C7327F2713D8FB001AB779 /* Resources */,
@@ -141,6 +170,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D3C732932714084C001AB779 /* Repositry */ = {
+			isa = PBXGroup;
+			children = (
+				D3C7329427140866001AB779 /* UserDefaultsRepositry.swift */,
+			);
+			path = Repositry;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,15 +185,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3C732782713D84B001AB779 /* Build configuration list for PBXNativeTarget "PokemonPictureBook" */;
 			buildPhases = (
+				970BEA69CA4FE094E65C18F5 /* [CP] Check Pods Manifest.lock */,
 				D3C732602713D84A001AB779 /* Sources */,
 				D3C732612713D84A001AB779 /* Frameworks */,
 				D3C732622713D84A001AB779 /* Resources */,
+				F41C60CC2E27B0B18775F4CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PokemonPictureBook;
+			packageProductDependencies = (
+				D3C73291271407BB001AB779 /* Alamofire */,
+			);
 			productName = PokemonPictureBook;
 			productReference = D3C732642713D84A001AB779 /* PokemonPictureBook.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +227,9 @@
 				Base,
 			);
 			mainGroup = D3C7325B2713D84A001AB779;
+			packageReferences = (
+				D3C73290271407BB001AB779 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D3C732652713D84A001AB779 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -207,6 +252,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		970BEA69CA4FE094E65C18F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PokemonPictureBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41C60CC2E27B0B18775F4CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonPictureBook/Pods-PokemonPictureBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonPictureBook/Pods-PokemonPictureBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonPictureBook/Pods-PokemonPictureBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3C732602713D84A001AB779 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +301,7 @@
 			files = (
 				D3C732862713DB3C001AB779 /* PokemonCell.swift in Sources */,
 				D3C7326C2713D84A001AB779 /* PokemonViewController.swift in Sources */,
+				D3C7329527140866001AB779 /* UserDefaultsRepositry.swift in Sources */,
 				D3C732882713E05C001AB779 /* PokemonHeader.swift in Sources */,
 				D3C732682713D84A001AB779 /* AppDelegate.swift in Sources */,
 				D3C732822713D93A001AB779 /* Anchor-Extension.swift in Sources */,
@@ -364,6 +452,7 @@
 		};
 		D3C732792713D84B001AB779 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 341E518C81C77931E01B5054 /* Pods-PokemonPictureBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +481,7 @@
 		};
 		D3C7327A2713D84B001AB779 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8549F992396E112730A9D291 /* Pods-PokemonPictureBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +530,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3C73290271407BB001AB779 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3C73291271407BB001AB779 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3C73290271407BB001AB779 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3C7325C2713D84A001AB779 /* Project object */;
 }

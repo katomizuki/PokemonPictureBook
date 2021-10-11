@@ -1,0 +1,6 @@
+framework module Pods_PokemonPictureBook {
+  umbrella header "Pods-PokemonPictureBook-umbrella.h"
+
+  export *
+  module * { export * }
+}
