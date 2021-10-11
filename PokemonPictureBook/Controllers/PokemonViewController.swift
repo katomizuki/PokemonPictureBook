@@ -7,7 +7,7 @@ class PokemonViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-    
+        PokemonManager().fetchPokemon()
     }
     
     private func setupCollectionView() {
@@ -15,8 +15,6 @@ class PokemonViewController: UICollectionViewController {
         collectionView.register(PokemonHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
         navigationItem.title = "Pokemon Picture Book"
     }
-   
-    
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }

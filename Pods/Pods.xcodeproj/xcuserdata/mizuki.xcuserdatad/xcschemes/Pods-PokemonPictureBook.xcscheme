@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "16B20EDBAE6C8613E27C33F27974ED32"
-               BuildableName = "Pods-PokemonPictureBook.framework"
+               BuildableName = "Pods_PokemonPictureBook.framework"
                BlueprintName = "Pods-PokemonPictureBook"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
