@@ -18,6 +18,7 @@
 		D3C732882713E05C001AB779 /* PokemonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C732872713E05C001AB779 /* PokemonHeader.swift */; };
 		D3C7328B2713E710001AB779 /* PokemonDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328A2713E710001AB779 /* PokemonDetailController.swift */; };
 		D3C7328D2713E794001AB779 /* FavoritePokemonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328C2713E794001AB779 /* FavoritePokemonController.swift */; };
+		D3C7328F2713E993001AB779 /* FavoritePokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7328E2713E993001AB779 /* FavoritePokemonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D3C732872713E05C001AB779 /* PokemonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonHeader.swift; sourceTree = "<group>"; };
 		D3C7328A2713E710001AB779 /* PokemonDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailController.swift; sourceTree = "<group>"; };
 		D3C7328C2713E794001AB779 /* FavoritePokemonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonController.swift; sourceTree = "<group>"; };
+		D3C7328E2713E993001AB779 /* FavoritePokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePokemonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				D3C732852713DB3C001AB779 /* PokemonCell.swift */,
 				D3C732872713E05C001AB779 /* PokemonHeader.swift */,
+				D3C7328E2713E993001AB779 /* FavoritePokemonCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				D3C732682713D84A001AB779 /* AppDelegate.swift in Sources */,
 				D3C732822713D93A001AB779 /* Anchor-Extension.swift in Sources */,
 				D3C7328B2713E710001AB779 /* PokemonDetailController.swift in Sources */,
+				D3C7328F2713E993001AB779 /* FavoritePokemonCell.swift in Sources */,
 				D3C7326A2713D84A001AB779 /* SceneDelegate.swift in Sources */,
 				D3C7328D2713E794001AB779 /* FavoritePokemonController.swift in Sources */,
 			);

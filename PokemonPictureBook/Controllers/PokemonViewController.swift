@@ -7,11 +7,15 @@ class PokemonViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    
     }
+    
     private func setupCollectionView() {
         collectionView.register(PokemonCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(PokemonHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        navigationItem.title = "Pokemon Picture Book"
     }
+   
     
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
@@ -40,6 +44,8 @@ extension PokemonViewController {
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function)
+        let vc = PokemonDetailController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -56,12 +62,15 @@ extension PokemonViewController :UICollectionViewDelegateFlowLayout {
 extension PokemonViewController:PokemonSaveDelegate {
     func addPokemon() {
         print(#function)
-        let vc = PokemonDetailController()
-        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 extension PokemonViewController:PokemonHeaderDelegate {
     func allFavoritePokemon() {
         print(#function)
+        let vc = FavoritePokemonController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+
