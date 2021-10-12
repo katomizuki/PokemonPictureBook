@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import SDWebImage
 class FavoritePokemonCell:UITableViewCell {
     
     private let pokemonImage:UIImageView = {
@@ -10,7 +11,7 @@ class FavoritePokemonCell:UITableViewCell {
         return iv
     }()
     
-    private let pokemoNameLabel:UILabel = {
+    private let pokemonNameLabel:UILabel = {
         let label = UILabel()
         label.text = "ピカちゅう"
         return label
@@ -30,14 +31,11 @@ class FavoritePokemonCell:UITableViewCell {
         label.text = "No'1"
         return label
     }()
-    private let button:UIButton = {
-        let button = UIButton()
-        button.setTitle("解除", for: .normal)
-        button.backgroundColor = .systemOrange
-        button.layer.cornerRadius = 10
-        button.layer.masksToBounds = true
-        return button
-    }()
+    var pokemon:PokemonModel? {
+        didSet {
+            configure()
+        }
+    }
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -48,17 +46,24 @@ class FavoritePokemonCell:UITableViewCell {
     
     func setupUI() {
         addSubview(pokemonImage)
-        let stackView = UIStackView(arrangedSubviews: [pokemonNumberLabel,pokemoNameLabel,pokemonTypeLabel,pokemonKindLabel])
+        let stackView = UIStackView(arrangedSubviews: [pokemonNumberLabel,pokemonNameLabel,pokemonTypeLabel,pokemonKindLabel])
         stackView.axis = .vertical
         stackView.spacing = 5
         addSubview(stackView)
-        addSubview(button)
         pokemonImage.anchor(left:leftAnchor,paddingLeft: 15,centerY:self.centerYAnchor,width: 60,height: 60)
         stackView.anchor(left:pokemonImage.rightAnchor,paddingLeft: 15,centerY: centerYAnchor)
-        button.anchor(right:rightAnchor,paddingRight: 20,centerY: centerYAnchor,width: 70,height: 50)
     }
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    private func configure() {
+        guard let pokemon = pokemon else { return }
+        pokemonNumberLabel.text = "図鑑番号　\(pokemon.id)"
+        pokemonNameLabel.text = pokemon.name
+        guard let url = URL(string: pokemon.urlImage) else { return }
+        pokemonImage.sd_setImage(with: url, completed: nil)
+        pokemonKindLabel.text = pokemon.genus
+        pokemonTypeLabel.text = TypeUtil.changeType(type: pokemon.type)
     }
 }

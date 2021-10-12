@@ -1,8 +1,8 @@
 import Foundation
 import UIKit
-extension UIViewController {
+class TypeUtil {
     
-    func changeType(type:String)->String {
+    static func changeType(type:String)->String {
         let utilArray = ["grass","fire","water","bug","normal","poison","electric","ground","fairy","fighting","psychic","ghost","ice","rock","dragon"]
         for i in 0..<PokemonType.allCases.count {
             let pokemonType = PokemonType(rawValue: utilArray[i])

@@ -15,7 +15,7 @@ class PokemonPresentar:PokemonPresentarInput {
     private var pokemons = [PokemonModel]()
     private weak var viewOutput:PokemonPresentarOutput!
     private var pokemonDataModel:GetPokemonDataInput
-    private var savePokemons = [PokemonModel]()
+    private var savePokemons = UserDefaultsRepository.loadFromUserDefaults()
     
     var numberOfPokemon: Int {
         return pokemons.count

@@ -120,6 +120,6 @@ class PokemonDetailController:UIViewController {
         explainTextView.text = "\(pokemon.explain)"
         explainTextView2.text = "\(pokemon.explain2)"
         explainTextView3.text = "\(pokemon.explain3)"
-        pokemonTypeLabel.text = self.changeType(type: pokemon.type)
+        pokemonTypeLabel.text = TypeUtil.changeType(type: pokemon.type)
     }
 }
