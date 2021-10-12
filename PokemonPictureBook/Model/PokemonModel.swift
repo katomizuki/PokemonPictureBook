@@ -1,6 +1,4 @@
-
 import Foundation
-import Alamofire
 
 struct PokemonModel:Codable {
     var name:String
@@ -12,17 +10,7 @@ struct PokemonModel:Codable {
     var height:Int
     var weight:Int
     var urlImage:String
-    init(dic:[String:Any]) {
-        self.name = dic["name"] as? String ?? "フシギダネ"
-        self.genus = dic["genus"] as? String ?? "たねポケモン"
-        self.explain = dic["explain"] as? String ?? "生まれたときから　背中に 不思議な　タネが　植えてあって 体と　ともに　育つという。"
-        self.explain2 = dic["explain2"] as? String ?? "生まれたときから　背中に 不思議な　タネが　植えてあって 体と　ともに　育つという。"
-        self.explain3 = dic["explain3"] as? String ?? "生まれたときから　背中に 不思議な　タネが　植えてあって 体と　ともに　育つという。"
-        self.id = dic["id"] as? Int ?? 1
-        self.height = dic["height"] as? Int ?? 0
-        self.weight = dic["weight"] as? Int ?? 0
-        self.urlImage = dic["urlImage"] as? String ?? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
-    }
+    var type:String
 }
 
 struct PokemonData:Codable {
@@ -48,12 +36,18 @@ struct Varieties:Codable {
 struct Pokemon :Codable {
     var url:String
 }
-struct PokemonData2:Codable {
+struct PokemonDetail:Codable {
     var height:Int
     var weight:Int
     var sprites:Front
+    var types:[Types]
 }
 struct Front:Codable {
     var front_default:String
 }
-
+struct Types:Codable {
+    var type:Name
+}
+struct Name:Codable {
+    var name:String
+}

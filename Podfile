@@ -7,4 +7,5 @@ target 'PokemonPictureBook' do
 
   # Pods for PokemonPictureBook
 pod 'SwiftyJSON', '~> 4.0'
+pod 'SDWebImage', '~> 5.0'
 end

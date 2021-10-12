@@ -15,8 +15,6 @@ class FavoritePokemonController:UITableViewController {
         tableView.backgroundColor = .white
         navigationItem.title = "Favorite Pokemon"
     }
-    
-    
 }
 
 extension FavoritePokemonController {

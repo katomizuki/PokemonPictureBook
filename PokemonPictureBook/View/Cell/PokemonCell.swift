@@ -1,15 +1,23 @@
-
 import Foundation
 import UIKit
+import SDWebImage
 protocol PokemonSaveDelegate:AnyObject {
-    func addPokemon()
+    func addPokemon(cell:PokemonCell)
 }
 class PokemonCell:UICollectionViewCell {
     
+    var pokemon:PokemonModel? {
+        didSet {
+            configureCell()
+        }
+    }
+    
     private let pokemonImage:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemPink
-        iv.layer.cornerRadius = 20
+        iv.layer.borderColor = UIColor.systemPink.cgColor
+        iv.layer.borderWidth = 3
+        iv.layer.masksToBounds = true
+        iv.layer.cornerRadius = 30
         iv.layer.masksToBounds = true
         return iv
     }()
@@ -56,7 +64,7 @@ class PokemonCell:UICollectionViewCell {
         addSubview(stack)
         addSubview(borderView)
         addSubview(addPokemonButton)
-        pokemonImage.anchor(left:self.leftAnchor,paddingLeft:15,centerY:self.centerYAnchor,width:40, height:40)
+        pokemonImage.anchor(left:self.leftAnchor,paddingLeft:15,centerY:self.centerYAnchor,width:60, height:60)
         stack.anchor(left:pokemonImage.rightAnchor,paddingLeft: 10,centerY: self.centerYAnchor)
         borderView.anchor(bottom:self.bottomAnchor,paddingBottom: 0,width: self.frame.width,height: 2)
         addPokemonButton.anchor(right:self.rightAnchor,paddingRight:20,centerY:self.centerYAnchor,width:80,height:40)
@@ -66,6 +74,15 @@ class PokemonCell:UICollectionViewCell {
     }
     @objc private func handleSave() {
         print(#function)
-        self.delegate?.addPokemon()
+        self.delegate?.addPokemon(cell: self)
+    }
+    private func configureCell() {
+        guard let pokemon = pokemon else {
+            return
+        }
+        pokemonNameLabel.text = pokemon.name
+        guard let url = URL(string: pokemon.urlImage) else { return }
+        pokemonImage.sd_setImage(with: url, completed: nil)
+        pokemonNumberLabel.text = "図鑑番号 \(pokemon.id)"
     }
 }

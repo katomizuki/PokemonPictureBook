@@ -10,12 +10,14 @@ class PokemonHeader:UICollectionReusableView{
         let label = UILabel()
         label.text = "ポケモン図鑑"
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.textColor = .systemOrange
+        label.textColor = .systemPink
         return label
     }()
     private let monsterBallImage:UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .systemOrange
+        iv.image = UIImage(named: "monstar-ball")
+        iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = 40
         iv.layer.masksToBounds = true
         return iv
@@ -23,7 +25,7 @@ class PokemonHeader:UICollectionReusableView{
     
     private let favoriteButton:UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemOrange
+        button.backgroundColor = .systemPink
         button.setTitle("お気に入りポケモン一覧", for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         button.addTarget(self, action: #selector(handleFavorite), for: .touchUpInside)
