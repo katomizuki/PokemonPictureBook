@@ -19,7 +19,7 @@ protocol PokemonFavoritePresentarOutput:AnyObject {
     func deleteComplete()
 }
 class PokemonPresentar:PokemonPresentarInput {
-
+    //Properties
     private var pokemons = [PokemonModel]()
     private weak var viewOutput:PokemonPresentarOutput!
     private var pokemonDataModel:GetPokemonDataInput
@@ -33,6 +33,7 @@ class PokemonPresentar:PokemonPresentarInput {
         return savePokemons.count
     }
     
+    //Mark initialize
     init(viewOutput:PokemonPresentarOutput,modelInput:GetPokemonDataInput) {
         self.viewOutput = viewOutput
         self.pokemonDataModel = modelInput
@@ -43,8 +44,8 @@ class PokemonPresentar:PokemonPresentarInput {
         self.pokemonDataModel = modelInput
     }
     
+    //Mark inputMethod
     func viewDidLoad() {
-        //データを取ってくる
         print(#function)
         pokemonDataModel.fetchPokemon { [weak self] pokemons in
             guard let self = self else { return }
@@ -53,12 +54,11 @@ class PokemonPresentar:PokemonPresentarInput {
             self.viewOutput.pokemonDataOutPut(pokemon: self.pokemons)
         }
     }
+    
     func addPokemon(index: Int) {
         print(#function)
-        //Userdefaultで保存する
         self.savePokemons =  UserDefaultsRepository.loadFromUserDefaults()
         self.savePokemons.append(pokemons[index])
-        print(self.savePokemons,"⚡️")
         UserDefaultsRepository.saveToUserDefaults(pokemon: savePokemons)
     }
    
@@ -79,17 +79,13 @@ class PokemonPresentar:PokemonPresentarInput {
     
     func searchTextInput(text: String) {
         print(#function)
-        print(text)
         let filterPokemonArray = self.pokemons.filter { return $0.name.contains(text)}
         self.pokemons = filterPokemonArray
-        print(self.pokemons)
         viewOutput.filterPokemonOutput(pokemon: self.pokemons)
     }
     
     func deleteFavorite(index: Int) {
         self.savePokemons = UserDefaultsRepository.deleteFromUserDefaults(index: index, pokemons: savePokemons)
-        print(savePokemons)
-        print(UserDefaultsRepository.loadFromUserDefaults())
         favoriteOutput.deleteComplete()
     }
 }

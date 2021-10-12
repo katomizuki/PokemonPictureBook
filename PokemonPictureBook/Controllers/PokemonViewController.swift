@@ -1,11 +1,13 @@
 import UIKit
 
 class PokemonViewController: UICollectionViewController{
+    //Properties
     private let cellId = "cellId"
     private let headerId = "headerId"
     private var pokemonPresentar:PokemonPresentarInput!
     private var indicatorView = UIActivityIndicatorView()
     private var searchController = UISearchController()
+    //Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -13,7 +15,7 @@ class PokemonViewController: UICollectionViewController{
         pokemonPresentar.viewDidLoad()
         setupSeachController()
     }
-    
+    //Mark setupMethod
     private func setupCollectionView() {
         collectionView.register(PokemonCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(PokemonHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
@@ -23,6 +25,7 @@ class PokemonViewController: UICollectionViewController{
         view.addSubview(indicatorView)
         indicatorView.startAnimating()
     }
+    //Initialize
     init() {
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
@@ -30,6 +33,7 @@ class PokemonViewController: UICollectionViewController{
         fatalError()
     }
     
+    //setupMethod
     private func setupSeachController() {
         navigationItem.title = "Pokemon Picture Book"
         //インスタンス
@@ -41,9 +45,9 @@ class PokemonViewController: UICollectionViewController{
         navigationItem.searchController = searchController
         //隠れるようにする
         navigationItem.hidesSearchBarWhenScrolling = true
-     }
+    }
 }
-
+//Mark collectionViewdelegate Method
 extension PokemonViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pokemonPresentar.numberOfPokemon
@@ -67,7 +71,7 @@ extension PokemonViewController {
         
     }
 }
-
+//Mark collectionviewflowlayoutMethod
 extension PokemonViewController :UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 60)
@@ -77,7 +81,7 @@ extension PokemonViewController :UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width, height: 150)
     }
 }
-
+//Mark PokemonSaveDelegate
 extension PokemonViewController:PokemonSaveDelegate {
     func addPokemon(cell: PokemonCell) {
         print(#function)
@@ -95,6 +99,7 @@ extension PokemonViewController:PokemonSaveDelegate {
         present(vc, animated: true, completion: nil)
     }
 }
+//Mark PokemonHeaderDelegate
 extension PokemonViewController:PokemonHeaderDelegate {
     func allFavoritePokemon() {
         print(#function)
@@ -102,7 +107,7 @@ extension PokemonViewController:PokemonHeaderDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//Mark PokemonPresarOutput
 extension PokemonViewController :PokemonPresentarOutput {
     func filterPokemonOutput(pokemon: [PokemonModel]) {
         print(#function)
@@ -125,7 +130,7 @@ extension PokemonViewController :PokemonPresentarOutput {
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-
+//Mark searchResultUpdating
 extension PokemonViewController:UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         print(#function)

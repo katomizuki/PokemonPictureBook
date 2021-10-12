@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import SDWebImage
 class FavoritePokemonCell:UITableViewCell {
-    
+    //Mark Properties
     private let pokemonImage:UIImageView = {
         let iv = UIImageView()
         iv.layer.borderColor = UIColor.systemPink.cgColor
@@ -38,13 +38,14 @@ class FavoritePokemonCell:UITableViewCell {
         }
     }
     
-    
+    //Mark Initialize
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
         backgroundColor = .white
     }
     
+    //Mark setupMethod
     func setupUI() {
         addSubview(pokemonImage)
         let stackView = UIStackView(arrangedSubviews: [pokemonNumberLabel,pokemonNameLabel,pokemonTypeLabel,pokemonKindLabel])
@@ -58,6 +59,7 @@ class FavoritePokemonCell:UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    //HelperMethod
     private func configure() {
         guard let pokemon = pokemon else { return }
         pokemonNumberLabel.text = "図鑑番号　\(pokemon.id)"

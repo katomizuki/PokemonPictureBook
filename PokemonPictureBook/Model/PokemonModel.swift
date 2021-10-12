@@ -1,5 +1,5 @@
 import Foundation
-
+//Mark PokemonModels
 struct PokemonModel:Codable {
     var name:String
     var id:Int

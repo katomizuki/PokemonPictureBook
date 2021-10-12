@@ -6,6 +6,7 @@ protocol PokemonHeaderDelegate:AnyObject {
 }
 class PokemonHeader:UICollectionReusableView{
     
+    //Mark Properties
     private let titleLabel:UILabel = {
         let label = UILabel()
         label.text = "ポケモン図鑑"
@@ -35,6 +36,7 @@ class PokemonHeader:UICollectionReusableView{
     }()
     weak var delegate:PokemonHeaderDelegate?
     
+    //Mark initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -48,6 +50,7 @@ class PokemonHeader:UICollectionReusableView{
     required init?(coder: NSCoder) {
         fatalError()
     }
+    //Mark selector
     @objc private func handleFavorite() {
         print(#function)
         self.delegate?.allFavoritePokemon()
