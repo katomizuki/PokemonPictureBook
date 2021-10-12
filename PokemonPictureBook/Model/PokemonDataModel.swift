@@ -25,7 +25,6 @@ class PokemonDataModel:GetPokemonDataInput {
                         let name = data.names[0].name
                         let id = data.id
                         let genera = data.genera[0].genus
-                        
                         let explain = data.flavor_text_entries[keyNumber].flavor_text
                         let explain2 = data.flavor_text_entries[keyNumber2].flavor_text
                         let explain3 = data.flavor_text_entries[keyNumber3].flavor_text
