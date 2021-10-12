@@ -25,7 +25,6 @@
 		D3C7329727140933001AB779 /* PokemonPresentar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329627140933001AB779 /* PokemonPresentar.swift */; };
 		D3C7329927140AA8001AB779 /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329827140AA8001AB779 /* PokemonModel.swift */; };
 		D3C7329B2714108D001AB779 /* PokemonDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329A2714108D001AB779 /* PokemonDataModel.swift */; };
-		D3C7329D27150E68001AB779 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329C27150E68001AB779 /* File.swift */; };
 		D3C7329F27152D8D001AB779 /* ChageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C7329E27152D8D001AB779 /* ChageType.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		D3C7329627140933001AB779 /* PokemonPresentar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonPresentar.swift; sourceTree = "<group>"; };
 		D3C7329827140AA8001AB779 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		D3C7329A2714108D001AB779 /* PokemonDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataModel.swift; sourceTree = "<group>"; };
-		D3C7329C27150E68001AB779 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		D3C7329E27152D8D001AB779 /* ChageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChageType.swift; sourceTree = "<group>"; };
 		E583FE7B6C005C9C7F8C4056 /* Pods_PokemonPictureBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonPictureBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,7 +121,6 @@
 			children = (
 				D3C7329827140AA8001AB779 /* PokemonModel.swift */,
 				D3C7329A2714108D001AB779 /* PokemonDataModel.swift */,
-				D3C7329C27150E68001AB779 /* File.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 				D3C732822713D93A001AB779 /* Anchor-Extension.swift in Sources */,
 				D3C7329B2714108D001AB779 /* PokemonDataModel.swift in Sources */,
 				D3C7329927140AA8001AB779 /* PokemonModel.swift in Sources */,
-				D3C7329D27150E68001AB779 /* File.swift in Sources */,
 				D3C7329F27152D8D001AB779 /* ChageType.swift in Sources */,
 				D3C7328B2713E710001AB779 /* PokemonDetailController.swift in Sources */,
 				D3C7328F2713E993001AB779 /* FavoritePokemonCell.swift in Sources */,

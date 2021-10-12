@@ -26,4 +26,17 @@ class UserDefaultsRepository {
             return []
         }
     }
+    
+    static func deleteFromUserDefaults(index:Int,pokemons:[PokemonModel])->[PokemonModel] {
+       var pokemonArray = pokemons
+       pokemonArray.remove(at: index)
+       let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(pokemonArray)
+            UserDefaults.standard.set(data, forKey: userDefaultsPokemonKey)
+        } catch {
+            print(error)
+        }
+        return pokemonArray
+    }
 }

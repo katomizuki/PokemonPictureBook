@@ -9,7 +9,7 @@ class PokemonDataModel:GetPokemonDataInput {
     func fetchPokemon(completion:@escaping([PokemonModel])->Void) {
         var pokemonArray = [PokemonModel]()
         let dispatchGroup = DispatchGroup()
-        for i in 1...151 {
+        for i in 1..<151 {
             dispatchGroup.enter()
             let pokemonURL = "https://pokeapi.co/api/v2/pokemon-species/\(i)"
             let pokemonDetailURL = "https://pokeapi.co/api/v2/pokemon/\(i)"

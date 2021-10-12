@@ -6,8 +6,9 @@ class PokemonDetailController:UIViewController {
     
     private let pokemonImage:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemOrange
-        iv.layer.cornerRadius = 40
+        iv.layer.borderColor = UIColor.systemPink.cgColor
+        iv.layer.borderWidth = 2
+        iv.layer.cornerRadius = 50
         iv.layer.masksToBounds = true
         return iv
     }()
@@ -104,7 +105,7 @@ class PokemonDetailController:UIViewController {
         view.addSubview(stackView)
         view.addSubview(explainStack)
         pokemonNumberLabel.anchor(top:view.safeAreaLayoutGuide.topAnchor,left:view.leftAnchor,right: view.rightAnchor,paddingTop: 30,paddingRight: 30,paddingLeft: 30,centerX: view.centerXAnchor,height: 30)
-        pokemonImage.anchor(top:pokemonNumberLabel.bottomAnchor,paddingTop: 10,centerX: view.centerXAnchor,width: 80,height: 80)
+        pokemonImage.anchor(top:pokemonNumberLabel.bottomAnchor,paddingTop: 10,centerX: view.centerXAnchor,width: 100,height: 100)
         stackView.anchor(top:pokemonImage.bottomAnchor,centerX: view.centerXAnchor,width: view.frame.width - 30,height: 150)
         explainStack.anchor(top:stackView.bottomAnchor,paddingTop: 10,centerX: view.centerXAnchor,width:view.frame.width - 30,height: 200)
     }

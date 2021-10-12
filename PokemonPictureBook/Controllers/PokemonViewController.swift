@@ -5,17 +5,18 @@ class PokemonViewController: UICollectionViewController{
     private let headerId = "headerId"
     private var pokemonPresentar:PokemonPresentarInput!
     private var indicatorView = UIActivityIndicatorView()
+    private var searchController = UISearchController()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         pokemonPresentar = PokemonPresentar(viewOutput: self, modelInput: PokemonDataModel())
         pokemonPresentar.viewDidLoad()
+        setupSeachController()
     }
     
     private func setupCollectionView() {
         collectionView.register(PokemonCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(PokemonHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
-        navigationItem.title = "Pokemon Picture Book"
         indicatorView.center = view.center
         indicatorView.style = .whiteLarge
         indicatorView.color = .gray
@@ -29,13 +30,25 @@ class PokemonViewController: UICollectionViewController{
         fatalError()
     }
     
+    private func setupSeachController() {
+        navigationItem.title = "Pokemon Picture Book"
+        //インスタンス
+        searchController = UISearchController(searchResultsController: nil)
+        //Delegateメソッドを設定
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        //itemに入れる
+        navigationItem.searchController = searchController
+        //隠れるようにする
+        navigationItem.hidesSearchBarWhenScrolling = true
+     }
 }
 
 extension PokemonViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pokemonPresentar.numberOfPokemon
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PokemonCell
         guard let pokemon = pokemonPresentar.pokemon(row: indexPath.row) else { return cell}
@@ -91,6 +104,13 @@ extension PokemonViewController:PokemonHeaderDelegate {
 }
 
 extension PokemonViewController :PokemonPresentarOutput {
+    func filterPokemonOutput(pokemon: [PokemonModel]) {
+        print(#function)
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
     func pokemonDataOutPut(pokemon: [PokemonModel]) {
         print(#function)
         DispatchQueue.main.async {
@@ -106,3 +126,14 @@ extension PokemonViewController :PokemonPresentarOutput {
     }
 }
 
+extension PokemonViewController:UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print(#function)
+        guard let text = searchController.searchBar.text else { return }
+        if !text.isEmpty {
+            pokemonPresentar.searchTextInput(text: text)
+        } else {
+            pokemonPresentar.viewDidLoad()
+        }
+    }
+}

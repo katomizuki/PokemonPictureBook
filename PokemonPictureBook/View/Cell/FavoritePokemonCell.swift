@@ -5,8 +5,9 @@ class FavoritePokemonCell:UITableViewCell {
     
     private let pokemonImage:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .systemOrange
-        iv.layer.cornerRadius = 30
+        iv.layer.borderColor = UIColor.systemPink.cgColor
+        iv.layer.borderWidth = 2
+        iv.layer.cornerRadius = 35
         iv.layer.masksToBounds = true
         return iv
     }()
@@ -50,7 +51,7 @@ class FavoritePokemonCell:UITableViewCell {
         stackView.axis = .vertical
         stackView.spacing = 5
         addSubview(stackView)
-        pokemonImage.anchor(left:leftAnchor,paddingLeft: 15,centerY:self.centerYAnchor,width: 60,height: 60)
+        pokemonImage.anchor(left:leftAnchor,paddingLeft: 15,centerY:self.centerYAnchor,width: 70,height: 70)
         stackView.anchor(left:pokemonImage.rightAnchor,paddingLeft: 15,centerY: centerYAnchor)
     }
     
