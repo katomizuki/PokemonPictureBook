@@ -64,11 +64,11 @@ class PokemonPresentar:PokemonPresentarInput {
    
     func pokemon(row:Int)->PokemonModel? {
         print(#function)
-        return  row >= pokemons.count ? nil:pokemons[row]
+        return  row >= pokemons.count ? nil : pokemons[row]
     }
     func savePokemon(row:Int)->PokemonModel? {
         print(#function)
-        return row >= savePokemons.count ? nil:savePokemons[row]
+        return row >= savePokemons.count ? nil : savePokemons[row]
     }
     
     func didSelectTap(indexPath:IndexPath) {
